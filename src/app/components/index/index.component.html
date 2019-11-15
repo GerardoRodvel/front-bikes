@@ -1,0 +1,29 @@
+
+<table class="table table-bordered">
+ <thead class="thead-dark">
+     <tr>
+         <th scope="col">#</th>
+         <th scope="col">Marca</th>
+         <th scope="col">Rodada</th>
+         <th scope="col">Color</th>
+         <th scope="col">Precio</th>
+         <th scope="col">Cantidad</th>
+         <th scope="col">Acciones</th>
+     </tr>
+
+ </thead>
+ <tbody *ngFor="let bike of bikes">
+     <tr>
+         <th scope="row">{{bike.id}} </th>
+         <td>{{bike.marca}} </td>
+         <td>{{bike.rodada}} </td>
+         <td>{{bike.color}} </td>
+         <td>{{bike.precio}} </td>
+         <td>{{bike.cantidad}} </td>
+         <td>
+             <button type="button" class="btn btn-info" [routerLink]="['/edit',bike.id]" >Editar</button>
+             <button type="button" class="btn btn-danger" (click)='eliminar(bike)'>eliminar</button>
+         </td>
+     </tr>
+ </tbody>
+</table>
