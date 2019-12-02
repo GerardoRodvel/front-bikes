@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { ConectorService } from 'src/app/conector.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class IndexComponent implements OnInit {
 
   //guardo mis datos
   bikes: any
+  @HostBinding ('class') classess = 'row';
 
   constructor(private api: ConectorService) { 
 

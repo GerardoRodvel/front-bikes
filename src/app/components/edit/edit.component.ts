@@ -40,7 +40,8 @@ export class EditComponent implements OnInit {
       rodada:['',Validators.required],
       color:['',Validators.required],
       precio:['',Validators.required],
-      cantidad:['',Validators.required]
+      cantidad:['',Validators.required],
+      image:['',Validators.required],
     })
 
     this.api.getBike(this.id).subscribe(response =>{
@@ -51,6 +52,7 @@ export class EditComponent implements OnInit {
       this.formEditar.get('color').setValue(response.data.color);
       this.formEditar.get('precio').setValue(response.data.precio);
       this.formEditar.get('cantidad').setValue(response.data.cantidad);
+      this.formEditar.get('image').setValue(response.data.image);
     })
   }
 

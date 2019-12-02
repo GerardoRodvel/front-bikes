@@ -1,9 +1,11 @@
-<div class="card">
+<div class="col-md-5 offset-md-2">
+  <div class="card">
     <div class="card-body">
+
       <form [formGroup]="formAgregar">
         <div class="form-group">
           <label class="col-md-4">Marca</label>
-          <input type="text" formControlName="marca" class="form-control" name="marca" />
+          <input type="text" formControlName="marca" class="form-control" name="marca" autofocus>
         </div>
 
         <div class="form-group">
@@ -26,9 +28,29 @@
             <input type="text" formControlName="cantidad" class="form-control" name="cantidad" />
             </div>
 
+        <div class="form-group">
+          <label class="col-md-4">Imagen</label>
+          <input type="url" formControlName="image" class="form-control" name="image" />
+          </div> 
+
           <div class="form-group">
-            <button type="submit" class="btn btn-primary" (click)='agregar()'>Agregar producto</button>
+            <!-- validacion de form -->
+            <button type="submit" class="btn btn-success btn-block " (click)='agregar()'> <i class="fas fa-bicycle"></i>  Agregar producto</button>
           </div>
       </form>
     </div>
   </div>
+</div>
+
+ <!-- <div class="col-md-4">
+    <div class="card card-body text-center">
+        <img [src]="bike.image == ''? '/assets/no_img.png' : bike.image" class="card-img-top">
+        <h3> {{bike.marca =='' ? 'Marca' :bike.marca }}</h3>
+        <h4>{{bike.rodada =='' ? 'Rodada' :bike.rodada}}</h4>
+        <h4>{{bike.color =='' ? 'color' :bike.color}}</h4>
+        <h4>{{bike.cantidad =='' ? 'cantidad' :bike.cantidad}}</h4>
+        <h4>{{bike.precio =='' ? 'Precio $' :bike.precio}}</h4>
+
+    </div>
+</div> --> 
+

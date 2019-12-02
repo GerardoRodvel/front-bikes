@@ -1,4 +1,4 @@
-<ng2-slim-loading-bar color="red"></ng2-slim-loading-bar>
+<!-- <ng2-slim-loading-bar color="red"></ng2-slim-loading-bar>
 <nav class="navbar navbar-expand-sm bg-light">
   <div class="container-fluid">
     <ul class="navbar-nav">
@@ -14,8 +14,31 @@
       </li> 
     </ul>
   </div>
+</nav> -->
+
+
+<ng2-slim-loading-bar color="red"></ng2-slim-loading-bar>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container">
+          <a class="navbar-brand text-white" routerLink="index">Central Bikes</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- ajustar a la derecha -->
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white" routerLink="index" routerLinkActivate="activate"><i class="fas fa-bicycle"></i>  Ver bikes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" routerLink="create" routerLinkActivate="activate"><i class="fas fa-plus-circle"></i>  Agregar bike</a>
+              </li>
+              
+            </ul>
+          </div>
+  </div>
 </nav>
 
-<div class="container">
+<div class="container p-4">
   <router-outlet></router-outlet>
 </div>

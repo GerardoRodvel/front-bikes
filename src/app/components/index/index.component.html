@@ -1,5 +1,5 @@
 
-<table class="table table-bordered">
+<!-- <table class="table table-bordered">
  <thead class="thead-dark">
      <tr>
          <th scope="col">#</th>
@@ -9,6 +9,7 @@
          <th scope="col">Precio</th>
          <th scope="col">Cantidad</th>
          <th scope="col">Acciones</th>
+         <th scope="col">imagen</th>
      </tr>
 
  </thead>
@@ -20,10 +21,35 @@
          <td>{{bike.color}} </td>
          <td>{{bike.precio}} </td>
          <td>{{bike.cantidad}} </td>
+         <td>{{bike.image}} </td>
          <td>
              <button type="button" class="btn btn-info" [routerLink]="['/edit',bike.id]" >Editar</button>
              <button type="button" class="btn btn-danger" (click)='eliminar(bike)'>eliminar</button>
          </td>
      </tr>
  </tbody>
-</table>
+</table> -->
+
+<div class="col-md-4" *ngFor= "let bike of bikes">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            {{bike.marca}}
+            Rodada
+            {{bike.rodada}}
+            <button class="btn btn-danger" (click)="eliminar(bike)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <img [src]="bike.image" class="card-img-top img">
+        <div class="card-body">
+            <p> 
+            {{bike.color}}
+            <!-- {{bike.cantidad}} -->
+        </p>
+            <p> $ {{bike.precio}}</p>
+            <a [routerLink]="['/edit',bike.id]" class="btn btn-info btn-block">
+                Edit bike
+            </a>
+        </div>
+    </div>
+</div>
